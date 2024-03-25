@@ -5,5 +5,9 @@ runs:
     - uses: actions/setup-python@v5
       with:
         cache: 'pip'
-    - run: pip3 install jupyter ipykernel
-    - run: find . -name '*.ipynb' -not -path './lib/*' -exec jupyter nbconvert --to script {} \;
+    - name: install python deps via pip
+      run: pip3 install jupyter ipykernel
+      shell: bash
+    - name: find ipynb files and convert to .py
+      run: find . -name '*.ipynb' -not -path './lib/*' -exec jupyter nbconvert --to script {} \;
+      shell: bash
