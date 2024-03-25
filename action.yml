@@ -1,6 +1,7 @@
 name: 'Extract ipynb to python scripts'
 description: 'Extracts ipython notebooks into script files with the same name but a .py extension'
 runs:
+  using: "composite"
   steps:
     - uses: actions/setup-python@v5
       with:
