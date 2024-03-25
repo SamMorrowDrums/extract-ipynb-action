@@ -7,7 +7,7 @@ runs:
       with:
         cache: 'pip'
     - name: install python deps via pip
-      run: pip3 install jupyter ipykernel
+      run: pip install jupyter ipykernel
       shell: bash
     - name: find ipynb files and convert to .py
       run: find . -name '*.ipynb' -not -path './lib/*' -exec jupyter nbconvert --to script {} \;
